@@ -1,17 +1,29 @@
 package edu.hope.demo.model;
 
 public class SysUser {
-	private int UId;
+	private int uid;
+	private String name;
+	private String phonenumber;
 	private String username;
 	private String password;
-	private String name;
-	private int age;
-	private String gender;
-	public int getUId() {
-		return UId;
+	private int points;
+	public int getId() {
+		return uid;
 	}
-	public void setUId(int uId) {
-		UId = uId;
+	public void setId(int id) {
+		this.uid = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 	public String getUsername() {
 		return username;
@@ -25,27 +37,10 @@ public class SysUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getName() {
-		return name;
+	public int getPoints() {
+		return points;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	@Override
-	public String toString() {
-		return "SysUser [UId=" + UId + ", username=" + username + ", password=" + password + ", name=" + name + ", age="
-				+ age + ", gender=" + gender + "]";
+	public void setPoints(int points) {
+		this.points = points;
 	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.hope.demo.mapper.AnswersMapper">
+<resultMap type="edu.hope.demo.model.Answers" id="answer_result">
+    <id column="id" property="id" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="answerid" property="answerid" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="questionid" property="questionid" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="answername" property="answername" javaType="java.lang.String" jdbcType="VARCHAR"/>
+	<result column="points" property="points" javaType="java.lang.Integer" jdbcType="Integer"/>
+	<result column="answer" property="answer" javaType="java.lang.String" jdbcType="VARCHAR"/>
+</resultMap>
+<select id="selectAllAnswers" resultMap="answers_result">
+  select * from answers
+</select>
+</mapper>
