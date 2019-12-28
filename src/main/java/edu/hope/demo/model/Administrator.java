@@ -1,17 +1,16 @@
 package edu.hope.demo.model;
 
-public class SysUser {
-	private int id;
+public class Administrator {
+	private int administratorsid;
 	private String name;
 	private String phonenumber;
 	private String username;
 	private String password;
-	private int points;
-	public int getId() {
-		return id;
+	public int getAdministratorsid() {
+		return administratorsid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setAdministratorsid(int administratorsid) {
+		this.administratorsid = administratorsid;
 	}
 	public String getName() {
 		return name;
@@ -21,6 +20,11 @@ public class SysUser {
 	}
 	public String getPhonenumber() {
 		return phonenumber;
+	}
+	@Override
+	public String toString() {
+		return "Administrator [administratorsid=" + administratorsid + ", name=" + name + ", phonenumber=" + phonenumber
+				+ ", username=" + username + ", password=" + password + "]";
 	}
 	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
@@ -36,11 +40,5 @@ public class SysUser {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public int getPoints() {
-		return points;
-	}
-	public void setPoints(int points) {
-		this.points = points;
 	}
 }

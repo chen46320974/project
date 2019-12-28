@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.hope.demo.mapper.AdminMapper">
-	<resultMap type="edu.hope.demo.model.Admin" id="admin_result">
+<mapper namespace="edu.hope.demo.mapper.AdministratorMapper">
+	<resultMap type="edu.hope.demo.model.Administrator" id="administrator_result">
 	<id column="administratorsid" property="administratorsid" javaType="java.lang.Integer" jdbcType="INTEGER"/>
 	<result column="name" property="name" javaType="java.lang.String" jdbcType="VARCHAR"/>
 	<result column="phonenumber" property="phonenumber" javaType="java.lang.String" jdbcType="VARCHAR"/>
