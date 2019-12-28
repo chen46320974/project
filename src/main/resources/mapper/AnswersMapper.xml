@@ -12,5 +12,14 @@
 <select id="selectAllAnswers" resultMap="answers_result">
   select * from answers
 </select>
+   <!-- 增加答案 -->
+	<insert id="insertAnswers" parameterType="answers_result" >
+        insert into answers (id, answerid, questionid, answername, points, answer)
+        values (#{id}, #{answerid}, #{questionid}, #{answername}, #{points}, #{answer})
+    </insert>
+    <!-- 删除答案 -->
+    <delete id="deleteAnswers" parameterType="string">
+		delete from answers where answerid=#{answerid}
+	</delete>
+    <!-- 以上两步即为审核 (与QuestionsMapper相同)-->
 </mapper>
-<!--  -->
