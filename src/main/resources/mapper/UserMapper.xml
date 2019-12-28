@@ -9,10 +9,10 @@
 	<result column="password" property="password" javaType="java.lang.Integer" jdbcType="VARCHAR"/>
 	<result column="points" property="points" javaType="java.lang.String" jdbcType="INT"/>
   </resultMap>
-  <select id="selectByusername" parameterType= "String" resultType="user_result">
+  <select id="selectByusername" parameterType= "string" resultType="user_result">
         select * from users where username = #{username}
   </select>
-  <select id = "selectByphonenumber" parameterType="String" resultType="phonenumber_result">
+  <select id = "selectByphonenumber" parameterType="string" resultType="phonenumber_result">
         select * from users where phonenumber = #{phonenumber}
   </select>
   <insert id="insertUser" parameterType="user_result" >

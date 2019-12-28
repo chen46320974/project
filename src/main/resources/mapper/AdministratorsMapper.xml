@@ -7,9 +7,18 @@
 	<result column="phonenumber" property="phonenumber" javaType="java.lang.String" jdbcType="VARCHAR"/>
 	<result column="username" property="username" javaType="java.lang.String" jdbcType="VARCHAR"/>
 	<result column="password" property="password" javaType="java.lang.Integer" jdbcType="VARCHAR"/>
-	<result column="points" property="points" javaType="java.lang.String" jdbcType="INT"/>
 	</resultMap>
  <select id="selectAllAdministrators" resultMap="admin_result">
 	select * from administrators
  </select>
+ <insert id="addadministrators" parameterType="admin_result">
+        insert into administrators (administratorsid, name, phonenumber, username, password)
+        values (#{administratorsid}, #{name}, #{phonenumber}, #{username,}, #{password})
+ </insert>
+ <delete id="delete" parameterType="string">
+		delete from user where id=#{id}
+ </delete>
+ <update id="update" parameterType="int">
+	update user set user.point=#{point} where user.id=#{id}
+ </update>
 </mapper>
