@@ -8,8 +8,18 @@
 	<result column="points" property="points" javaType="java.lang.Integer" jdbcType="Integer"/>
 	<result column="questions" property="questions" javaType="java.lang.String" jdbcType="VARCHAR"/>
 	<result column="unsolved" property="unsolved" javaType="java.lang.String" jdbcType="enum"/>
-</resultMap>
-<select id="selectAllQuestions" resultMap="question_result">
-   select * from movies
-</select>
+ </resultMap>
+   <select id="selectAllQuestions" resultMap="question_result">
+   select * from questions
+    </select>
+    <!-- 删除问题 -->
+    <delete id="deleteQuestions" parameterType="string">
+		delete from questions where questionid=#{questionid}
+	</delete>
+	<!-- 增加问题 -->
+	<insert id="insertQuestions" parameterType="questions_result" >
+        insert into questions (id, questionid, questionname, points, questions, unsolved)
+        values (#{id}, #{questionid}, #{questionname}, #{points,}, #{questions}, #{unsolved})
+    </insert>
+    <!-- 以上两步即为审核 -->
 </mapper>

@@ -9,12 +9,14 @@
 	<result column="password" property="password" javaType="java.lang.Integer" jdbcType="VARCHAR"/>
 	<result column="points" property="points" javaType="java.lang.String" jdbcType="INT"/>
   </resultMap>
+  <!-- 登陆：以用户名及密码为条件搜索数据库 -->
   <select id="selectByusername" parameterType= "string" resultType="user_result">
         select * from users where username = #{username}
   </select>
-  <select id = "selectByphonenumber" parameterType="string" resultType="phonenumber_result">
-        select * from users where phonenumber = #{phonenumber}
+  <select id = "selectBypassword" parameterType="string" resultType="password_result">
+        select * from users where password = #{password}
   </select>
+  <!-- 注册新用户 -->
   <insert id="insertUser" parameterType="user_result" >
         insert into users (id, name, phonenumber, username, password, points)
         values (#{id}, #{name}, #{phonenumber}, #{username,}, #{password}, #{points})

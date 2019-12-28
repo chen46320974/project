@@ -11,13 +11,23 @@
  <select id="selectAllAdministrators" resultMap="admin_result">
 	select * from administrators
  </select>
+ <!-- 管理员登陆：以管理员用户名及密码为条件搜索数据库 -->
+  <select id="selectByusername" parameterType= "string" resultType="user_result">
+        select * from administrators where username = #{username}
+  </select>
+  <select id = "selectBypassword" parameterType="string" resultType="password_result">
+        select * from administrators where password = #{password}
+  </select>
+ <!-- 增加管理员 -->
  <insert id="addadministrators" parameterType="admin_result">
         insert into administrators (administratorsid, name, phonenumber, username, password)
         values (#{administratorsid}, #{name}, #{phonenumber}, #{username,}, #{password})
  </insert>
+ <!-- 删除用户 -->
  <delete id="delete" parameterType="string">
 		delete from user where id=#{id}
  </delete>
+ <!-- 修改积分 -->
  <update id="update" parameterType="int">
 	update user set user.point=#{point} where user.id=#{id}
  </update>
